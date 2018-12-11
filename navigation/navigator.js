@@ -1,9 +1,8 @@
 import React from 'react'
 import { createStackNavigator } from 'react-navigation'
 // import WelcomeScreen from '../Screens/Welcome'
-import verifyPhone from '../Screens/verifyPhone'
+import Homescreen from '../Screens/Homescreen'
 
 export default createStackNavigator({
-    // Welcome: WelcomeScreen,
-    verifyPhone : verifyPhone
+    Homescreen: Homescreen,
   });
