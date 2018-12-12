@@ -1,19 +1,18 @@
 import React, { Component } from "react";
-import { View, ScrollView} from "react-native";
+import Header from "../../components/Header";
 import {
   Container,
-  Header,
-  Title,
   Content,
   Footer,
   FooterTab,
   Button,
-  Left,
-  Right,
-  Body,
-  Icon,
   Text
 } from "native-base";
+
+// import { Tab, Tabs } from "native-base";
+// import Tab1 from '../Cart'
+// import Tab2 from '../Cart'
+// import Tab3 from '../Cart'
 
 class Homescreen extends Component {
   static navigationOptions = {
@@ -23,20 +22,31 @@ class Homescreen extends Component {
   render() {
     return (
       <Container>
-        <Header style={{marginTop: 24}}>
-          <Left>
-            <Button transparent>
-              <Icon name="menu" />
-            </Button>
-          </Left>
-          <Body>
-            <Title>Header</Title>
-          </Body>
-          <Right />
-        </Header>
+        <Header
+          headerColor={"purple"}
+          tabs={"true"}
+          title={"Homescreen"}
+          icon={"menu"}
+          searchBtn={true}
+          favBtn={true}
+          threeDots={true}
+        />
+        {/* <Tabs>
+          <Tab heading="Tab1">
+            <Tab1 />
+          </Tab>
+          <Tab heading="Tab2">
+            <Tab2 />
+          </Tab>
+          <Tab heading="Tab3">
+            <Tab3 />
+          </Tab>
+        </Tabs> */}
+
         <Content>
           <Text>This is Content Section</Text>
         </Content>
+
         <Footer>
           <FooterTab>
             <Button full>
