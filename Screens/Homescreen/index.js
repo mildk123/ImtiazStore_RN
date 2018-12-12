@@ -1,6 +1,19 @@
 import React, { Component } from "react";
-import { View, ScrollView, Text } from "react-native";
-import { Header, StatusBar } from "react-native-elements";
+import { View, ScrollView} from "react-native";
+import {
+  Container,
+  Header,
+  Title,
+  Content,
+  Footer,
+  FooterTab,
+  Button,
+  Left,
+  Right,
+  Body,
+  Icon,
+  Text
+} from "native-base";
 
 class Homescreen extends Component {
   static navigationOptions = {
@@ -9,17 +22,29 @@ class Homescreen extends Component {
 
   render() {
     return (
-      <View>
-        <StatusBar backgroundColor="blue" barStyle="light-content" />
-        <Header
-          leftComponent={{ icon: "menu", color: "#fff" }}
-          centerComponent={{ text: "MY TITLE", style: { color: "#fff" } }}
-          rightComponent={{ icon: "search", color: "#fff" }}
-        />
-        <ScrollView>
-          <Text>123123</Text>
-        </ScrollView>
-      </View>
+      <Container>
+        <Header style={{marginTop: 24}}>
+          <Left>
+            <Button transparent>
+              <Icon name="menu" />
+            </Button>
+          </Left>
+          <Body>
+            <Title>Header</Title>
+          </Body>
+          <Right />
+        </Header>
+        <Content>
+          <Text>This is Content Section</Text>
+        </Content>
+        <Footer>
+          <FooterTab>
+            <Button full>
+              <Text>Footer</Text>
+            </Button>
+          </FooterTab>
+        </Footer>
+      </Container>
     );
   }
 }
