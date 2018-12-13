@@ -1,16 +1,17 @@
 import React, { Component } from "react";
 import Header from "../../components/Header";
 import Carousel from "../../components/Carousel";
-import Card from "../../components/Card";
-import { Col, Row, Grid } from "react-native-easy-grid";
-import { View, Image } from "react-native";
+
+import HomeGrid from '../../Helper/HomeGrid'
+
 import {
   Container,
   Content,
   Footer,
   FooterTab,
   Button,
-  Text
+  Text,
+  Icon
 } from "native-base";
 
 class Homescreen extends Component {
@@ -18,7 +19,6 @@ class Homescreen extends Component {
     header: null
   };
 
-  componentDidMount() {}
 
   render() {
     return (
@@ -27,51 +27,36 @@ class Homescreen extends Component {
           icon={"menu"}
           headerColor={"purple"}
           title={"Homescreen"}
-          searchBtn={true}
+          searchBtn={false}
           favBtn={true}
           threeDots={true}
         />
 
         <Content>
           <Carousel />
-
-          <Grid style={{backgroundColor: 'lightblue'}}>
-            <Col style={{ backgroundColor: "green" }}>
-              <Row style={{backgroundColor: 'red'}}>
-                <Card source={require("../../assets/Trending/heads.jpg")} />
-              </Row>
-            </Col>
-
-            <Col style={{ backgroundColor: "#00CE9F" }}>
-              <Row>
-                <Card source={require("../../assets/Trending/watch1.jpg")} />
-              </Row>
-            </Col>
-          </Grid>
-
-
-          <Grid>
-            <Col style={{ backgroundColor: "#635DB7" }}>
-              <Row>
-                <Card source={require("../../assets/Trending/heads.jpg")} />
-              </Row>
-            </Col>
-
-            <Col style={{ backgroundColor: "#00CE9F" }}>
-              <Row>
-                <Card source={require("../../assets/Trending/watch1.jpg")} />
-              </Row>
-            </Col>
-          </Grid>
+          <HomeGrid />
         </Content>
 
-        {/* <Footer>
+        <Footer style={{backgroundColor: 'purple'}}>
           <FooterTab>
-            <Button full>
-              <Text>Footer</Text>
+            <Button>
+            <Icon active name="md-home" />
+              <Text>Home</Text>
+            </Button>
+            <Button >
+            <Icon active name="md-search" />
+              <Text>Search</Text>
+            </Button>
+            <Button >
+            <Icon active name="md-cart" />
+              <Text>Cart</Text>
+            </Button>
+            <Button >
+            <Icon active name="md-person" />
+              <Text>Account</Text>
             </Button>
           </FooterTab>
-        </Footer> */}
+        </Footer>
       </Container>
     );
   }
