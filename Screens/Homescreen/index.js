@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 import Header from "../../components/Header";
+import Carousel from "../../components/Carousel";
+import Card from "../../components/Card";
+import { Col, Row, Grid } from "react-native-easy-grid";
+import { View, Image } from "react-native";
 import {
   Container,
   Content,
@@ -9,51 +13,65 @@ import {
   Text
 } from "native-base";
 
-// import { Tab, Tabs } from "native-base";
-// import Tab1 from '../Cart'
-// import Tab2 from '../Cart'
-// import Tab3 from '../Cart'
-
 class Homescreen extends Component {
   static navigationOptions = {
     header: null
   };
 
+  componentDidMount() {}
+
   render() {
     return (
       <Container>
         <Header
-          headerColor={"purple"}
-          tabs={"true"}
-          title={"Homescreen"}
           icon={"menu"}
+          headerColor={"purple"}
+          title={"Homescreen"}
           searchBtn={true}
           favBtn={true}
           threeDots={true}
         />
-        {/* <Tabs>
-          <Tab heading="Tab1">
-            <Tab1 />
-          </Tab>
-          <Tab heading="Tab2">
-            <Tab2 />
-          </Tab>
-          <Tab heading="Tab3">
-            <Tab3 />
-          </Tab>
-        </Tabs> */}
 
         <Content>
-          <Text>This is Content Section</Text>
+          <Carousel />
+
+          <Grid style={{backgroundColor: 'lightblue'}}>
+            <Col style={{ backgroundColor: "green" }}>
+              <Row style={{backgroundColor: 'red'}}>
+                <Card source={require("../../assets/Trending/heads.jpg")} />
+              </Row>
+            </Col>
+
+            <Col style={{ backgroundColor: "#00CE9F" }}>
+              <Row>
+                <Card source={require("../../assets/Trending/watch1.jpg")} />
+              </Row>
+            </Col>
+          </Grid>
+
+
+          <Grid>
+            <Col style={{ backgroundColor: "#635DB7" }}>
+              <Row>
+                <Card source={require("../../assets/Trending/heads.jpg")} />
+              </Row>
+            </Col>
+
+            <Col style={{ backgroundColor: "#00CE9F" }}>
+              <Row>
+                <Card source={require("../../assets/Trending/watch1.jpg")} />
+              </Row>
+            </Col>
+          </Grid>
         </Content>
 
-        <Footer>
+        {/* <Footer>
           <FooterTab>
             <Button full>
               <Text>Footer</Text>
             </Button>
           </FooterTab>
-        </Footer>
+        </Footer> */}
       </Container>
     );
   }
