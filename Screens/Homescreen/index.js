@@ -4,7 +4,7 @@ import Carousel from "../../components/Carousel";
 
 import HomeGrid from "../../Helper/HomeGrid";
 
-import Footer from '../../Helper/Footer'
+// import Footer from '../../Helper/Footer'
 
 import {
   Container,
@@ -12,9 +12,9 @@ import {
 } from "native-base";
 
 class Homescreen extends Component {
-  static navigationOptions = {
-    header: null
-  };
+static navigationOptions = {
+  header : null
+}
 
   render() {
     return (
@@ -22,7 +22,7 @@ class Homescreen extends Component {
         <Header
           icon={"menu"}
           headerColor={"purple"}
-          title={"Homescreen"}
+          title={" "}
           searchBtn={false}
           favBtn={true}
           threeDots={true}
@@ -33,7 +33,7 @@ class Homescreen extends Component {
           <HomeGrid />
         </Content>
 
-        <Footer />
+        
       </Container>
     );
   }
