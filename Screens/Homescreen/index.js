@@ -2,23 +2,19 @@ import React, { Component } from "react";
 import Header from "../../components/Header";
 import Carousel from "../../components/Carousel";
 
-import HomeGrid from '../../Helper/HomeGrid'
+import HomeGrid from "../../Helper/HomeGrid";
+
+import Footer from '../../Helper/Footer'
 
 import {
   Container,
-  Content,
-  Footer,
-  FooterTab,
-  Button,
-  Text,
-  Icon
+  Content
 } from "native-base";
 
 class Homescreen extends Component {
   static navigationOptions = {
     header: null
   };
-
 
   render() {
     return (
@@ -37,26 +33,7 @@ class Homescreen extends Component {
           <HomeGrid />
         </Content>
 
-        <Footer style={{backgroundColor: 'purple'}}>
-          <FooterTab>
-            <Button>
-            <Icon active name="md-home" />
-              <Text>Home</Text>
-            </Button>
-            <Button >
-            <Icon active name="md-search" />
-              <Text>Search</Text>
-            </Button>
-            <Button >
-            <Icon active name="md-cart" />
-              <Text>Cart</Text>
-            </Button>
-            <Button >
-            <Icon active name="md-person" />
-              <Text>Account</Text>
-            </Button>
-          </FooterTab>
-        </Footer>
+        <Footer />
       </Container>
     );
   }
