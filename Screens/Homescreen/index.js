@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Header from "../../components/Header";
+import Header from  '../../Helper/Header';
 import Carousel from "../../components/Carousel";
 
 import HomeGrid from "../../Helper/HomeGrid";

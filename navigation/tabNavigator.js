@@ -1,89 +1,79 @@
-import React from 'react';
-import { Platform } from 'react-native';
-import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
+import React from "react";
+import {
+  createStackNavigator,
+  createBottomTabNavigator
+} from "react-navigation";
+import Ionicons from "react-native-vector-icons/Ionicons";
 
-import TabBarIcon from '../components/TabBarIcon';
+import { Icon } from "native-base";
 
-import Homescreen from '../Screens/Homescreen'
-import Messages from '../Screens/Messages'
-import Cart from '../Screens/Cart'
-import Account from '../Screens/Account';
-
+import Homescreen from "../Screens/Homescreen";
+import Messages from "../Screens/Messages";
+import Cart from "../Screens/Cart";
+import Account from "../Screens/Account";
 
 const HomeStack = createStackNavigator({
   Home: {
-    screen : Homescreen,
-  }
-},{
-  /* The header config from HomeScreen is now here */
-  defaultNavigationOptions: {
-    backgroundColor: 'red',
+    screen: Homescreen
   }
 });
 
 HomeStack.navigationOptions = {
   tabBarLabel: 'Home',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={
-        Platform.OS === 'ios'
-          ? `ios-home${focused ? '' : '-outline'}`
-          : 'md-home'
-      }
-    />
+    <Ionicons size={28} name='ios-home' />
   ),
 };
 
-
-
 const MessagesStack = createStackNavigator({
-    Messages: Messages
+  Messages: Messages
 });
 
 MessagesStack.navigationOptions = {
   tabBarLabel: 'Messages',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-chatboxes' : 'md-chatboxes'}
-    />
+    <Ionicons size={28} name='ios-chatbubbles' />
+
   ),
 };
 
-
 const CartStack = createStackNavigator({
-    Cart: Cart,
-  });
-  
-  CartStack.navigationOptions = {
-    tabBarLabel: 'Cart',
-    tabBarIcon: ({ focused }) => (
-      <TabBarIcon
-        focused={focused}
-        name={Platform.OS === 'ios' ? 'ios-cart' : 'md-cart'}
-      />
-    ),
-  };
+  Cart: Cart
+});
+
+CartStack.navigationOptions = {
+  tabBarLabel: 'Cart',
+  tabBarIcon: ({ focused }) => (
+    <Ionicons size={28} name='md-cart' />
+
+  ),
+};
 
 const AccountStack = createStackNavigator({
-    Account: Account
+  Account: Account
 });
 
 AccountStack.navigationOptions = {
   tabBarLabel: 'Account',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-person' : 'md-person'}
-    />
+    <Ionicons size={28} name='ios-person' />
   ),
 };
 
-
-export default createBottomTabNavigator({
-  HomeStack,
-  MessagesStack,
-  CartStack,
-  AccountStack,
-});
+export default createBottomTabNavigator(
+  {
+    HomeStack,
+    MessagesStack,
+    CartStack,
+    AccountStack
+  },
+  {
+    defaultNavigationOptions: {
+      tabBarOptions: {
+        
+        activeTintColor: "tomato",
+        inactiveTintColor: "gray"
+      }
+    }
+  }
+);
