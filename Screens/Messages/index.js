@@ -22,7 +22,7 @@ class Messages extends Component {
       <Container>
         <Header
           icon={"menu"}
-          headerColor={"purple"}
+          headerColor={"#8E54E9"}
           title={"Messages"}
           searchBtn={false}
           favBtn={false}

@@ -22,7 +22,7 @@ class Settings extends Component {
       <Container>
         <Header
           icon={"menu"}
-          headerColor={"purple"}
+          headerColor={"#8E54E9"}
           title={"Settings"}
           searchBtn={false}
           favBtn={false}

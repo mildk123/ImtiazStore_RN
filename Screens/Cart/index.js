@@ -22,7 +22,7 @@ class Cart extends Component {
       <Container>
         <Header
           icon={"menu"}
-          headerColor={"purple"}
+          headerColor={"#8E54E9"}
           title={"Cart"}
           searchBtn={false}
           favBtn={false}

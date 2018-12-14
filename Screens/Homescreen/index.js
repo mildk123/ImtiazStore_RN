@@ -21,8 +21,8 @@ static navigationOptions = {
       <Container>
         <Header
           icon={"menu"}
-          headerColor={"purple"}
-          title={" "}
+          headerColor={"#8E54E9"}
+          title={"Explore"}
           searchBtn={false}
           favBtn={true}
           threeDots={true}
