@@ -1,6 +1,6 @@
 import React from "react";
-// import Navigator from "./navigation/Navigator";
-import TabNavigator from './navigation/tabNavigator';
+import Navigator from './navigation/navigator';
+// import TabNavigator from './navigation/tabNavigator';
 import { Font, AppLoading } from "expo";
 
 export default class App extends React.Component {
@@ -39,7 +39,7 @@ export default class App extends React.Component {
       );
     } else {
       return (
-          <TabNavigator />
+          <Navigator />
       );
     }
   }

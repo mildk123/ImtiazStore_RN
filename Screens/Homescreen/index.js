@@ -17,6 +17,7 @@ static navigationOptions = {
 }
 
   render() {
+    console.log('homescreen', this)
     return (
       <Container>
         <Header
