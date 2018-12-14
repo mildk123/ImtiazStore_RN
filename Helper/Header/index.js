@@ -3,8 +3,6 @@ import { Header, Left, Body, Right, Button, Icon, Title } from "native-base";
 
 class HeaderComp extends Component {
   render() {
-    console.log('HeaderComp', this)
-
     return (
       <Header
         style={{ marginTop: 24, backgroundColor: this.props.headerColor }}
@@ -13,7 +11,6 @@ class HeaderComp extends Component {
       >
         <Left>
           <Button
-            onPress={() => this.props.navigation.navigate("DrawerOpen")}
             transparent
           >
             <Icon name={this.props.icon} />

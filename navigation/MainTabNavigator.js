@@ -13,6 +13,8 @@ import Messages from "../Screens/Messages";
 import Cart from "../Screens/Cart";
 import Account from "../Screens/Account";
 
+
+
 const HomeStack = createStackNavigator({
   Home: {
     screen: Homescreen
@@ -29,6 +31,8 @@ HomeStack.navigationOptions = {
     )
 };
 
+
+
 const MessagesStack = createStackNavigator({
   Messages: Messages
 });
@@ -42,6 +46,8 @@ MessagesStack.navigationOptions = {
       <MaterialIcons color="#b29f94" size={30} name="chat-bubble-outline" />
     )
 };
+
+
 
 const CartStack = createStackNavigator({
   Cart: Cart
@@ -57,6 +63,8 @@ CartStack.navigationOptions = {
     )
 };
 
+
+
 const AccountStack = createStackNavigator({
   Account: Account
 });
@@ -70,6 +78,8 @@ AccountStack.navigationOptions = {
       <MaterialIcons color="#b29f94" size={30} name="person-outline" />
     )
 };
+
+
 
 export default createBottomTabNavigator(
   {
