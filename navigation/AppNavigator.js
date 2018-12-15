@@ -13,5 +13,4 @@ export default createSwitchNavigator({
   AuthLoading: AuthLoading,
   Auth: AuthStackNavigator,
   App: AppDrawerNavigator,
-  Header : Header
 });
