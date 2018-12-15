@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import Icon from "react-native-vector-icons/FontAwesome";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, AsyncStorage } from "react-native";
 import { Input, Button } from "react-native-elements";
 
 export class SignIn extends Component {
@@ -16,6 +16,11 @@ export class SignIn extends Component {
     }
   };
 
+  _onPress = async () => {
+    await AsyncStorage.setItem("userToken", "Milad");
+    this.props.navigation.navigate("App");
+  };
+
   render() {
     return (
       <View style={styles.container}>
@@ -25,7 +30,7 @@ export class SignIn extends Component {
             labelStyle={{
               margin: 5,
               fontSize: 22,
-              color: '#8E54E9',
+              color: "#8E54E9",
               fontStyle: "italic"
             }}
             placeholder="abc@domain.com"
@@ -35,7 +40,7 @@ export class SignIn extends Component {
             labelStyle={{
               margin: 5,
               fontSize: 22,
-              color : '#8E54E9',
+              color: "#8E54E9",
               fontStyle: "italic"
             }}
             label="Password"
@@ -48,6 +53,7 @@ export class SignIn extends Component {
           <Button
             title="Done"
             iconRight
+            onPress={() => this._onPress()}
             icon={<Icon name="chevron-right" size={15} color="white" />}
             buttonStyle={{
               backgroundColor: "#8E54E9",

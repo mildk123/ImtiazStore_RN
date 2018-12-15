@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import {
-  Text,
   View,
   StyleSheet,
   ActivityIndicator,
@@ -16,7 +15,6 @@ export class AuthLoading extends Component {
 
   _loadApp = async () => {
     const userToken = await AsyncStorage.getItem("userToken");
-
     this.props.navigation.navigate(userToken ? "App" : "Auth");
   };
 

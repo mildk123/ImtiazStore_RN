@@ -1,12 +1,17 @@
-import React from 'react';
-import { createSwitchNavigator } from 'react-navigation';
+import React from "react";
+import { createSwitchNavigator } from "react-navigation";
 
-import MainTabNavigator from './MainTabNavigator';
-import AuthLoading from '../Screens/AuthLoading'
-import Authentication from '../Screens/Auth';
+import AuthLoading from "../Screens/AuthLoading";
+
+import AuthStackNavigator from "../Screens/Auth/index";
+
+import AppDrawerNavigator from "./AppDrawerNavigator";
+
+import Header from '../Helper/Header'
 
 export default createSwitchNavigator({
-  AuthLoading : AuthLoading,
-  Auth: Authentication,
-  App: MainTabNavigator,
+  AuthLoading: AuthLoading,
+  Auth: AuthStackNavigator,
+  App: AppDrawerNavigator,
+  Header : Header
 });

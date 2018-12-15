@@ -1,27 +1,33 @@
 import React, { Component } from "react";
-import { StyleSheet, View, Image, Text } from "react-native";
+import { StyleSheet, View, Image } from "react-native";
+
+import { createStackNavigator } from "react-navigation";
+
 
 import { Button } from "react-native-elements";
 import Icon from "react-native-vector-icons/MaterialIcons";
-import {createStackNavigator} from 'react-navigation'
 
-import SignUp from './SignUp'
-import SignIn from './SignIn'
+import SignIn from "./SignIn";
+import SignUp from "./SignUp";
 
 class Authentication extends Component {
   static navigationOptions = {
     header: null
-  }
+  };
+  
   render() {
     return (
       <View style={styles.container}>
         <View style={styles.imgContainer}>
-          <Image style={styles.picSize} source={require("../../assets/icon.png")} />
+          <Image
+            style={styles.picSize}
+            source={require("../../assets/icon.png")}
+          />
         </View>
 
         <View style={styles.btnContainer}>
           <Button
-            onPress={() => this.props.navigation.push('SignUp')}
+            onPress={() => this.props.navigation.push("SignUp")}
             title="Sign Up"
             iconRight
             icon={<Icon name="keyboard-return" size={15} color="white" />}
@@ -35,7 +41,7 @@ class Authentication extends Component {
             }}
           />
           <Button
-          onPress={() => this.props.navigation.push('SignIn')}
+            onPress={() => this.props.navigation.push("SignIn")}
             title="Login"
             iconRight
             icon={<Icon name="keyboard-return" size={15} color="white" />}
@@ -55,18 +61,17 @@ class Authentication extends Component {
 }
 
 
-export default createStackNavigator({
-  Auth : Authentication,
-  SignUp : SignUp,
-  SignIn : SignIn
+export default AuthStackNavigator = createStackNavigator({
+  Auth: Authentication,
+  SignIn: SignIn,
+  SignUp: SignUp
 });
-
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffffff',
-    justifyContent: 'flex-start'
+    backgroundColor: "#ffffff",
+    justifyContent: "flex-start"
   },
   imgContainer: {
     justifyContent: "center",
@@ -77,9 +82,9 @@ const styles = StyleSheet.create({
     maxWidth: 360
   },
   btnContainer: {
-    flexDirection: 'row',
+    flexDirection: "row",
     margin: 50,
     alignItems: "center",
-    justifyContent: 'space-evenly'
+    justifyContent: "space-evenly"
   }
 });
