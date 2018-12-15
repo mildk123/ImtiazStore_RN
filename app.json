@@ -20,6 +20,9 @@
     },
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "android" : {
+      "package": "com.zendar.SuperMart"
+    }
   }
 }
