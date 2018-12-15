@@ -6,7 +6,7 @@ import { Input, Button } from "react-native-elements";
 
 export class SignIn extends Component {
   static navigationOptions = {
-    title: "Log in",
+    title: "Login",
     headerStyle: {
       backgroundColor: "#8E54E9"
     },

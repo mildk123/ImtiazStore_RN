@@ -36,7 +36,7 @@ class Authentication extends Component {
           />
           <Button
           onPress={() => this.props.navigation.push('SignIn')}
-            title="Log In"
+            title="Login"
             iconRight
             icon={<Icon name="keyboard-return" size={15} color="white" />}
             buttonStyle={{
