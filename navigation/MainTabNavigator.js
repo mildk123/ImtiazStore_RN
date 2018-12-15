@@ -11,7 +11,7 @@ import Octicons from "react-native-vector-icons/Octicons";
 import Homescreen from "../Screens/Homescreen";
 import Messages from "../Screens/Messages";
 import Cart from "../Screens/Cart";
-import Account from "../Screens/Account";
+import Settings from "../Screens/Settings";
 
 
 
@@ -65,12 +65,12 @@ CartStack.navigationOptions = {
 
 
 
-const AccountStack = createStackNavigator({
-  Account: Account
+const SettingsStack = createStackNavigator({
+  Settings: Settings
 });
 
-AccountStack.navigationOptions = {
-  tabBarLabel: "Account",
+SettingsStack.navigationOptions = {
+  tabBarLabel: "SettingsStack",
   tabBarIcon: ({ tintColor, focused }) =>
     focused ? (
       <MaterialIcons color={tintColor} size={34} name="person" />
@@ -86,7 +86,7 @@ export default createBottomTabNavigator(
     HomeStack,
     MessagesStack,
     CartStack,
-    AccountStack
+    SettingsStack
   },
   {
     tabBarOptions: {

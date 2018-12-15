@@ -1,5 +1,5 @@
 import React from 'react';
-import { Platform, StatusBar, StyleSheet, View } from 'react-native';
+import {StyleSheet, View } from 'react-native';
 import { AppLoading, Font, Icon } from 'expo';
 import AppNavigator from './navigation/AppNavigator';
 
@@ -7,6 +7,26 @@ export default class App extends React.Component {
   state = {
     isLoadingComplete: false,
   };
+
+
+  _loadResourcesAsync = async () => {
+    return Promise.all([
+      Font.loadAsync({
+        ...Icon.Ionicons.font,
+        ...Icon.Octicons.font,
+        Roboto_medium: require("native-base/Fonts/Roboto_medium.ttf"),
+      }),
+    ]);
+  };
+
+  _handleLoadingError = error => {
+    console.warn(error);
+  };
+
+  _handleFinishLoading = () => {
+    this.setState({ isLoadingComplete: true });
+  };
+  
 
   render() {
     if (!this.state.isLoadingComplete && !this.props.skipLoadingScreen) {
@@ -20,35 +40,14 @@ export default class App extends React.Component {
     } else {
       return (
         <View style={styles.container}>
-          {Platform.OS === 'ios' && <StatusBar barStyle='dark-content' />}
           <AppNavigator />
         </View>
       );
     }
   }
 
-  _loadResourcesAsync = async () => {
-    return Promise.all([
-      Font.loadAsync({
-        // This is the font that we are using for our tab bar
-        ...Icon.Ionicons.font,
-        ...Icon.Octicons.font,
-        // We include SpaceMono because we use it in HomeScreen.js. Feel free
-        // to remove this if you are not using it in your app
-        Roboto_medium: require("native-base/Fonts/Roboto_medium.ttf"),
-      }),
-    ]);
-  };
 
-  _handleLoadingError = error => {
-    // In this case, you might want to report the error to your error
-    // reporting service, for example Sentry
-    console.warn(error);
-  };
 
-  _handleFinishLoading = () => {
-    this.setState({ isLoadingComplete: true });
-  };
 }
 
 const styles = StyleSheet.create({
