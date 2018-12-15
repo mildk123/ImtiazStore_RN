@@ -1,21 +1,21 @@
-import React from 'react';
-import {StyleSheet, View } from 'react-native';
-import { AppLoading, Font, Icon } from 'expo';
-import AppNavigator from './navigation/AppNavigator';
+import React from "react";
+import { View, StyleSheet } from "react-native";
+
+import { AppLoading, Font, Icon } from "expo";
+import AppNavigator from "./navigation/AppNavigator";
 
 export default class App extends React.Component {
   state = {
-    isLoadingComplete: false,
+    isLoadingComplete: false
   };
-
 
   _loadResourcesAsync = async () => {
     return Promise.all([
       Font.loadAsync({
         ...Icon.Ionicons.font,
         ...Icon.Octicons.font,
-        Roboto_medium: require("native-base/Fonts/Roboto_medium.ttf"),
-      }),
+        Roboto_medium: require("native-base/Fonts/Roboto_medium.ttf")
+      })
     ]);
   };
 
@@ -26,7 +26,6 @@ export default class App extends React.Component {
   _handleFinishLoading = () => {
     this.setState({ isLoadingComplete: true });
   };
-  
 
   render() {
     if (!this.state.isLoadingComplete && !this.props.skipLoadingScreen) {
@@ -45,14 +44,11 @@ export default class App extends React.Component {
       );
     }
   }
-
-
-
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-  },
+    backgroundColor: "#fff"
+  }
 });
