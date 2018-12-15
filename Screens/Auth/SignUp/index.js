@@ -46,7 +46,7 @@ export class SignUp extends Component {
 
         <View style={styles.btnDiv}>
           <Button
-            title="okay"
+            title="Done"
             iconRight
             icon={<Icon name="chevron-right" size={15} color="white" />}
             buttonStyle={{
